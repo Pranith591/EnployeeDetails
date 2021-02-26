@@ -1,5 +1,5 @@
 <div class="card-deck">
-<div *ngFor='let Emp of EmpData?.data'>
+<div *ngFor="let Emp of EmpData?.data! | paginate: { itemsPerPage: itemperpage, currentPage: page } ">
   <div class="card m-3"  style="min-width: 18rem; max-width:10.5%;" (click)="ViewEmployeeDetails(Emp)">
 
     <img class="card-img-top imageThumbnail" src="{{Emp?.avatar}}" />
@@ -7,6 +7,7 @@
       {{Emp?.first_name+' '+ Emp?.last_name}}
     </div>
   </div>
-</div>
 
+</div>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

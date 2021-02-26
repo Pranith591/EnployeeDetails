@@ -12,13 +12,15 @@ import { Employee } from './EmpInterface.component';
 
 })
 export class EmployeesListComponent implements OnInit {
-
+  page: number = 1;
+  itemperpage: number = 8;
   constructor( private service:EmpServiceService,private router:Router) { }
 EmpData?:EmmployeeData;
   ngOnInit(): void {
     this.service.getEmployeeDetails().subscribe(res=> this.EmpData =res);
 
   }
+
 
   ViewEmployeeDetails(empDetail:Employee)
   {
@@ -27,5 +29,6 @@ EmpData?:EmmployeeData;
     localStorage.setItem('datas',JSON.stringify(this.service.formData));
 
   }
+
 
 }

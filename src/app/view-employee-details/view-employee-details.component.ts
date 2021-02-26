@@ -16,7 +16,7 @@ data?:Employee
   ngOnInit(): void {
 
   this.data = JSON.parse(localStorage.getItem("datas")|| '{}');
-  console.log(this.data)
+
 
   }
 

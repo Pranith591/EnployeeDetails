@@ -8,20 +8,21 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EmpServiceService } from './Shared/emp-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewEmployeeDetailsComponent } from './view-employee-details/view-employee-details.component';
-import { JwPaginationComponent } from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesListComponent,
     PageNotFoundComponent,
-    ViewEmployeeDetailsComponent,
-    JwPaginationComponent
+    ViewEmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [EmpServiceService],
   bootstrap: [AppComponent]
