@@ -1,0 +1,12 @@
+<div class="card-deck">
+<div *ngFor='let Emp of EmpData?.data'>
+  <div class="card m-3"  style="min-width: 18rem; max-width:10.5%;" (click)="ViewEmployeeDetails(Emp)">
+
+    <img class="card-img-top imageThumbnail" src="{{Emp?.avatar}}" />
+    <div class="card-footer text-center">
+      {{Emp?.first_name+' '+ Emp?.last_name}}
+    </div>
+  </div>
+</div>
+
+</div>
